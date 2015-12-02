@@ -1,0 +1,199 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.example.my_chat.UserRegistration" >
+
+    <LinearLayout
+        android:id="@+id/userRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00AFF0"
+        android:orientation="vertical"
+        android:padding="5dp"
+        tools:context="com.example.my_chat.UserRegistration" >
+
+        <TextView
+            android:id="@+id/register_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="New User Registration"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/register_subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="* Fields are Mandatory"
+            android:textColor="#FFFFFF"
+            android:textSize="14dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="First Name*" />
+
+        <EditText
+            android:id="@+id/first_name"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_borders"
+            android:inputType="textCapWords"
+            android:maxLines="1" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="Last Name" />
+
+        <EditText
+            android:id="@+id/last_name"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:inputType="textCapWords"
+            android:background="@drawable/edit_text_borders"
+            android:maxLines="1" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="Email-Id*" />
+
+        <EditText
+            android:id="@+id/register_email"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_borders"
+            android:maxLines="1"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="User-Name(this will be your screen name)*" />
+
+        <EditText
+            android:id="@+id/register_user_name"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_borders"
+            android:maxLines="1" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="Password*" />
+
+        <EditText
+            android:id="@+id/register_password"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_borders"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="Re-Enter Password*" />
+
+        <EditText
+            android:id="@+id/register_re_password"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_borders"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="Date of Birth*" />
+
+        <EditText
+            android:id="@+id/datePicker"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_borders"
+            android:editable="false"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="Time of Birth" />
+
+        <EditText
+            android:id="@+id/timePicker"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_borders"
+            android:editable="false"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="Select Country*" />
+
+        <Spinner
+            android:id="@+id/selectCountry"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_borders"
+            android:paddingLeft="10dp" />
+
+        <Button
+            android:id="@+id/sign_up"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="#33C951"
+            android:text="SIGN UP"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</ScrollView>
