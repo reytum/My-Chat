@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 import org.apache.http.HttpEntity;
@@ -67,6 +68,7 @@ public class UserRegistration extends Activity implements OnClickListener {
 
 	String[] countries = { "", "Australia", "Autria", "Albania", "China", "Belgium", "France", "Italy", "England",
 			"Canada", "U.S.A", "Japan", "Pakistan", "South Africa", "India", "Bangladesh", "Srilanka", "U.A.E" };
+	protected Locale local = Locale.ENGLISH;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -102,8 +104,8 @@ public class UserRegistration extends Activity implements OnClickListener {
 
 				if (!isNetworkAvailable())
 					Toast.makeText(UserRegistration.this,
-							"No internet connection detected!!! Please make sure you are connected to internet!!! ", 0)
-							.show();
+							"No internet connection detected!!! Please make sure you are connected to internet!!! ",
+							Toast.LENGTH_SHORT).show();
 
 				else {
 
@@ -120,8 +122,8 @@ public class UserRegistration extends Activity implements OnClickListener {
 
 					final String fName1 = fName.getText().toString().trim();
 					final String lName1 = lName.getText().toString().trim();
-					final String uName1 = uName.getText().toString().trim();
-					final String email1 = email.getText().toString().trim();
+					final String uName1 = uName.getText().toString().toLowerCase(local).trim();
+					final String email1 = email.getText().toString().toLowerCase(local).trim();
 					final String password1 = password.getText().toString().trim();
 					final String rPassword1 = rPassword.getText().toString().trim();
 					final String dob1 = dob.getText().toString();
@@ -200,6 +202,8 @@ public class UserRegistration extends Activity implements OnClickListener {
 							e.printStackTrace();
 						} catch (ExecutionException e) {
 							e.printStackTrace();
+						} catch (IndexOutOfBoundsException e) {
+							Toast.makeText(UserRegistration.this, "Newtork Timeout...!!!", Toast.LENGTH_SHORT).show();
 						}
 
 					}
@@ -339,7 +343,7 @@ public class UserRegistration extends Activity implements OnClickListener {
 			protected void onPostExecute(String result) {
 				super.onPostExecute(result);
 
-				Toast.makeText(UserRegistration.this, "Welcome", 0).show();
+				Toast.makeText(UserRegistration.this, "Welcome", Toast.LENGTH_SHORT).show();
 			}
 
 		}

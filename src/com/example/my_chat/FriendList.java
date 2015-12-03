@@ -1,6 +1,7 @@
 package com.example.my_chat;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -135,14 +136,14 @@ public class FriendList extends Activity {
 				@Override
 				public void onClick(DialogInterface arg0, int arg1) {
 
-					final String friendUname = searchUname.getText().toString().trim();
+					final String friendUname = searchUname.getText().toString().toLowerCase(Locale.ENGLISH).trim();
 
 					Cursor c = db.rawQuery("SELECT * FROM FriendList WHERE uname='" + friendUname + "'", null);
 
 					if (friendUname.length() == 0)
 						Toast.makeText(FriendList.this, "Please enter a Username!!!!", Toast.LENGTH_SHORT).show();
 
-					else if (friendUname.equals(unameLogged))
+					else if (friendUname.equalsIgnoreCase(unameLogged))
 						Toast.makeText(FriendList.this, "You cannot chat with yourself", Toast.LENGTH_SHORT).show();
 
 					else if (c.moveToNext())
